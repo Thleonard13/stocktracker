@@ -14,13 +14,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-h1 {
-  font-size: 6rem;
-}
-
-h4 {
-  font-size: 1.6rem;
-}
 a {
   font-weight: 500;
   color: white;
@@ -42,6 +35,14 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
 }
 
 button {
@@ -71,6 +72,13 @@ button:focus-visible {
   text-align: center;
   font-size: 4rem;
   padding: 2rem 0 0 0;
+}
+
+.gradient-text {
+  background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(25deg,#4c2ef5,#ff00ea);
 }
 
 @media (prefers-color-scheme: light) {

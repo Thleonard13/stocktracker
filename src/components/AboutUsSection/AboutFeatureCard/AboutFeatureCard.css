@@ -1,11 +1,11 @@
 .about-feature-card {
-    background-color: rgba(46, 33, 68, 0.556);
-    border: 1px solid #ccc5;
+    background-color:  hsla(0,0%,100%,.05);
+    border: 1px solid hsla(0,0%,51%,.25);
     margin: 2rem;
     padding: 1rem;
     border-radius: 10px;
     display: flex;
-    width: 100%;
+    width: 90%;
 }
 
 .feature-icon {
@@ -22,4 +22,9 @@
 
 .about-feature-card h4{
     line-height: 1;
+    margin-bottom: 10px;
+}
+
+.about-feature-card p{
+    color: #d2d3de;
 }

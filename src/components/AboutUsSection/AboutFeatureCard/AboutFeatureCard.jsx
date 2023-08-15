@@ -1,13 +1,17 @@
 import React from 'react'
 import './AboutFeatureCard.css'
 
-const AboutFeatureCard = () => {
+const AboutFeatureCard = (props) => {
+
+  const { icon, title, details }  = props.contents
+  console.log(title)
+
   return (
     <div className='about-feature-card'>
-        <i class="fa-solid fa-credit-card feature-icon"></i>
+        <i className={icon + " feature-icon"}></i>
         <div className='feature-text'>
-            <h4>CONNECT YOUR WALLET</h4>
-            <p>Use your favorite banking apps to connect with our app.</p>
+            <h4>{title}</h4>
+            <p>{details}</p>
         </div>
     </div>
   )

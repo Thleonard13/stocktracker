@@ -1,0 +1,27 @@
+#join-us-section{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(0deg,#0f051d 30%,#130749 70%);
+    background-image: linear-gradient(0deg,#130749 30%,#0f051d 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media-links {
+    margin: 1rem;
+}
+
+.social-media-links i {
+    font-size: 3rem;
+    margin: 1rem;
+    transition: 300ms;
+}
+
+.social-media-links i:hover {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(25deg,#4c2ef5,#ff00ea);
+}

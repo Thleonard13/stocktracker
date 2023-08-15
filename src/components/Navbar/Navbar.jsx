@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav id='navbar'>
         <div id='logo'>
           <a>
-           <h1>SmrtInvest</h1> 
+           <h1>InstaVest</h1> 
           </a>
         </div>
         <ul id='navlinks'>

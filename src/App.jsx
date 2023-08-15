@@ -7,6 +7,7 @@ import Hero from './components/Hero/Hero'
 import Market from './components/Market/Market'
 import AboutUs from './components/AboutUsSection/AboutUs'
 import JoinUs from './components/JoinUsSection/JoinUs'
+import Footer from './components/Footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <Market />
       <AboutUs />
       <JoinUs />
+      <Footer />
     </>
   )
 }
