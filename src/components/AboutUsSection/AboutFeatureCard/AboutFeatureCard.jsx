@@ -4,7 +4,6 @@ import './AboutFeatureCard.css'
 const AboutFeatureCard = (props) => {
 
   const { icon, title, details }  = props.contents
-  console.log(title)
 
   return (
     <div className='about-feature-card'>

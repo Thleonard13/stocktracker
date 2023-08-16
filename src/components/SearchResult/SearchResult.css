@@ -1,0 +1,14 @@
+#search-result {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 1rem;
+
+}
+
+.positive {
+    color: #2ac12a;
+}
+
+.negative {
+    color: rgb(255, 2, 2);
+}
