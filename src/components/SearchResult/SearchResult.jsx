@@ -10,21 +10,26 @@ const SearchResult = (props) => {
   const percentChange = (((Close - Open) / Open) * 100).toFixed(2)
 
   return (
-    <div id='search-result'>
-        <h2>{stockInfo.Metadata.Symbol}</h2>
-        <p>Today's Change</p>
-        {percentChange <= 0? <p className='negative'>{percentChange}</p>:
-          <p className='positive'>+{percentChange}</p>
-        }
-        <div className='searched-stock-details'>
-          <h4>Today's Stats:</h4>
-          <p>Open: {Open}</p>
-          <p>Close: {Close}</p>
-          <p>High: {High}</p>
-          <p>Low: {Low}</p>
-          <p>Volume: {Volume}</p>
-        </div>
-    </div>
+    <section id='search-result-section'>
+      <div className='search-result-card'>
+          <div className='result-card-left'>
+            <h2 className='result-ticker'>{stockInfo.Metadata.Symbol}</h2>
+            <h4>Today</h4>
+            {/* return proper styling for a positive/negative percent change */}
+            {percentChange <= 0? <p className='negative percent-chg'>{percentChange}%</p>:
+              <p className='positive percent-chg'>+{percentChange}%</p>
+            }
+          </div>
+          <div className='result-details'>
+            <h4>Today's Stats:</h4>
+            <p>Open: {Open}</p>
+            <p>Close: {Close}</p>
+            <p>High: {High}</p>
+            <p>Low: {Low}</p>
+            <p>Volume: {Volume}</p>
+          </div>
+      </div>
+    </section>
   )
 }
 

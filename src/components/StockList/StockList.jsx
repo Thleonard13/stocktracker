@@ -9,9 +9,9 @@ const StockList = () => {
         <div className='list-container'>
             <div className='stock-list-header'>
                 <p>Ticker</p>
-                <p> Price</p>
+                <p>Price</p>
                 <p>24h Change</p>
-                <p>Market Cap</p>
+                <p>Volume</p>
             </div>
             <StockHighlights />
             <StockHighlights />

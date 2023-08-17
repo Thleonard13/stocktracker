@@ -1,3 +1,9 @@
+
+#market-section{
+    background: linear-gradient(rgba(0,0,0) 0%, rgba(15,5,29,1) 10%);
+
+}
+
 #market-header {
     text-align: center;
     padding: 1rem;

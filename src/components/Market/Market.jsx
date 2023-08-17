@@ -7,7 +7,13 @@ import { useState } from 'react'
 
 const Market = () => {
 
-  const [ foundStock, setFoundStock ] = useState()
+  const [ foundStock, setFoundStock ] = useState(
+    // EXAMPLE DATA
+    // {
+    //   Metadata: { Symbol: 'AAPL'},
+    //   Results: [{Open: 1, Close: 2, High: 3, Low: 4, Volume: 5}]
+    // }
+  )
   const [ errorMsg, setErrorMsg ] = useState()
 
   // today's date formatted for API query
@@ -30,7 +36,8 @@ const Market = () => {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'REMOVED FROM GITHUB!!',
+        // API KEY REMOVED FOR GITHUB
+        'X-RapidAPI-Key': '',
         'X-RapidAPI-Host': 'apistocks.p.rapidapi.com'
       }
     };

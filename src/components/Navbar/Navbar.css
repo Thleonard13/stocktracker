@@ -5,17 +5,36 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 5vw;
+    border-bottom: 1px solid hsla(0,0%,51%,.25);;
 }
 
 #navlinks {
     display: flex;
-    width: 50%;
+    align-items: center;
+ 
     list-style: none;
 }
 
 #navlinks a {
-    padding: 5vw;
+    padding: 0 2rem;
     color: inherit;
+    font-size: 1rem;
+    transition: 300ms;
+}
+
+.social-navlinks a {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    transition: 300ms;
+}
+
+
+#navlinks a:hover, .social-navlinks a:hover {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg, #4c2ef5 0%, #ff00ea);
 }
 
