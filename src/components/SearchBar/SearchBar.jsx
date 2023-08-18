@@ -6,6 +6,7 @@ const SearchBar = (props) => {
 
   const  [query, setQuery] = useState('');
 
+  // fetches stock info using ticker in the search bar
   const handleEnterKeyPress = (event) => {
     if (event.key === 'Enter'){
       props.getStockInfo(query)

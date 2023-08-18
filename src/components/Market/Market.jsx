@@ -5,63 +5,33 @@ import SearchResult from '../SearchResult/SearchResult'
 import StockList from '../StockList/StockList'
 import { useState } from 'react'
 
+import fetchStockInfo from '../../Utilities/FetchStocks'
+
 const Market = () => {
 
-  const [ foundStock, setFoundStock ] = useState(
-    // EXAMPLE DATA
-    // {
-    //   Metadata: { Symbol: 'AAPL'},
-    //   Results: [{Open: 1, Close: 2, High: 3, Low: 4, Volume: 5}]
-    // }
-  )
+  const [ stockInfo, setStockInfo ] = useState()
   const [ errorMsg, setErrorMsg ] = useState()
   const [ isLoading, setIsLoading ] = useState(false)
 
-  // today's date formatted for API query
-  let endDate = new Date().toJSON().slice(0, 10);
-
-  // yesterday's date formatted for API query
-  const getStartDate = () => {
-    let yesterday = new Date()
-    yesterday.setDate(yesterday.getDate() + - 1)
-    return JSON.stringify(yesterday).slice(1,11)
-  }
-  const startDate = getStartDate();
-
-  // search API for stock using inputted ticker and today's date
-  const getStockInfo = async (queryString) => {
-
-    setFoundStock(null);
-    setErrorMsg(null)
-    const url = `https://apistocks.p.rapidapi.com/daily?symbol=${queryString}&dateStart=${startDate}&dateEnd=${endDate}`;
-    const options = {
-      method: 'GET',
-      headers: {
-        // API KEY REMOVED FOR GITHUB
-        'X-RapidAPI-Key': '',
-        'X-RapidAPI-Host': 'apistocks.p.rapidapi.com'
-      }
-    };
-
+  const fetchStock = async (symbol) => {
+    setIsLoading(true);
+    setErrorMsg(null);
     try {
-      setIsLoading(true)
-      const response = await fetch(url, options);
-      const result = await response.json();
-      setIsLoading(false)
-      if(result.Results.length <= 0) {
-        setErrorMsg("No matching ticker symbol was found.")
+      const result = await fetchStockInfo(symbol);
+      
+      if (result["Error Message"]) {
+        setErrorMsg('Sorry, that ticker symbol was not found.');
+      } else {
+        setStockInfo(result);
       }
-      console.log(result);
-      if(result.Results.length >= 1) { 
-      setFoundStock(result);
-      }
-    } catch (error) {
-      setErrorMsg(error)
-      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
-
+  // This API does not seem to send back status codes
+  // This makes displaying errors to the DOM more difficult. For now I will just log request results to the console
+  console.log(stockInfo)
 
   return (
     <section id='market-section' className='section-padding'>
@@ -69,11 +39,11 @@ const Market = () => {
         <h1 className='section-title'>Market Updates</h1>
         <p>Starting tracking stocks today and build your portfolio.</p>
       </div>
-      <SearchBar getStockInfo={getStockInfo} />
+      <SearchBar getStockInfo={fetchStock} />
       {isLoading && <h2 className='loading'>Fetching Ticker Info...</h2>}
       {errorMsg && <div className='error-msg'><h4>{errorMsg}</h4></div>}
-      {foundStock && <SearchResult stockInfo={foundStock}/>}
-      <StockList getStockInfo={getStockInfo}/>
+      {stockInfo && <SearchResult stockInfo={stockInfo}/>}
+      <StockList/>
     </section>
   )
 }
