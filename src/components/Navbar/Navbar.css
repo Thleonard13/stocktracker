@@ -1,5 +1,5 @@
 #navbar {
-    background-color: #0f051d;
+    background-color: #0a0215;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -13,7 +13,6 @@
 #navlinks {
     display: flex;
     align-items: center;
- 
     list-style: none;
 }
 
@@ -38,3 +37,15 @@
     background-image: linear-gradient(90deg, #4c2ef5 0%, #ff00ea);
 }
 
+#mobile-icon {
+    display: none;
+    font-size: 1.5rem;
+}
+
+/* MOBILE SCREENS */
+@media screen and (max-width: 1000px) {
+
+    #mobile-icon {
+        display: initial;
+    }
+}

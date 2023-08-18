@@ -20,5 +20,21 @@
 
 .feature-img {
     width: 90%;
+    min-width: 200px;
+    max-width: 400px;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+    .feature-container {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 5000px) {
+
+    .feature-column {
+        padding: 0;
+    }
+  }

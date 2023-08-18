@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .social-media-links {
@@ -24,4 +25,12 @@
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(25deg,#4c2ef5,#ff00ea);
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .social-media-links i {
+        font-size: 2rem;
+    }
 }

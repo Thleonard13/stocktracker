@@ -3,10 +3,12 @@
     justify-content: center;
     align-items: center;
     height: 200px;
+    max-width: 90vw;
 }
 
 #search-bar input{
     width: 500px;
+    max-width: 90%;
     padding: 10px;
     font-size: 1.6rem;
     background-color: white;
@@ -26,4 +28,21 @@
 
 #search-bar i:hover {
     color: #ddd;
+}
+
+/* MOBILE SCREENS */
+@media screen and (max-width: 500px) {
+
+    #search-bar {
+        height: 100px;
+    }
+
+    #search-bar input{
+        font-size: 1rem;
+    }
+
+    #search-bar i {
+        padding: 5px;
+        font-size: 1.6rem;
+    }
 }

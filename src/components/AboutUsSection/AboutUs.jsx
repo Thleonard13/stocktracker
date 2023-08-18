@@ -56,7 +56,9 @@ const AboutUs = () => {
                 <AboutFeatureCard contents={featureCardContent[2]}/>
             </div>
             <div className='feature-column-2'>
-                <img className='feature-img' src={vector}/>
+                <img className='feature-img disappear-on-mobile' 
+                    src={vector}
+                    alt="stock price analytics chart"/>
             </div>
             <div className='feature-column'>
                 <AboutFeatureCard contents={featureCardContent[3]}/>

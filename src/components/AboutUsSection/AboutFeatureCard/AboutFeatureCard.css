@@ -28,3 +28,12 @@
 .about-feature-card p{
     color: #d2d3de;
 }
+
+@media screen and (max-width: 500px) {
+
+    .about-feature-card {
+        margin: 1rem 0;
+        max-width: 95vw;
+    }
+
+}

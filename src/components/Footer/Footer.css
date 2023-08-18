@@ -3,4 +3,17 @@ footer {
     align-items: center;
     justify-content: center;
     height: 3rem;
+    text-align: center;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+
+    footer {
+        height: 2rem;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+    }
 }

@@ -14,11 +14,13 @@ const SearchResult = (props) => {
       <div className='search-result-card'>
           <div className='result-card-left'>
             <h2 className='result-ticker'>{stockInfo.Metadata.Symbol}</h2>
+            <div className='change-info'>
             <h4>Today</h4>
             {/* return proper styling for a positive/negative percent change */}
             {percentChange <= 0? <p className='negative percent-chg'>{percentChange}%</p>:
               <p className='positive percent-chg'>+{percentChange}%</p>
             }
+            </div>
           </div>
           <div className='result-details'>
             <h4>Today's Stats:</h4>

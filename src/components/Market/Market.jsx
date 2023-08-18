@@ -15,6 +15,7 @@ const Market = () => {
     // }
   )
   const [ errorMsg, setErrorMsg ] = useState()
+  const [ isLoading, setIsLoading ] = useState(false)
 
   // today's date formatted for API query
   let endDate = new Date().toJSON().slice(0, 10);
@@ -43,10 +44,12 @@ const Market = () => {
     };
 
     try {
+      setIsLoading(true)
       const response = await fetch(url, options);
       const result = await response.json();
+      setIsLoading(false)
       if(result.Results.length <= 0) {
-        setErrorMsg("No matching ticker symbol was found")
+        setErrorMsg("No matching ticker symbol was found.")
       }
       console.log(result);
       if(result.Results.length >= 1) { 
@@ -58,6 +61,8 @@ const Market = () => {
     }
   }
 
+
+
   return (
     <section id='market-section' className='section-padding'>
       <div id='market-header'>
@@ -65,9 +70,10 @@ const Market = () => {
         <p>Starting tracking stocks today and build your portfolio.</p>
       </div>
       <SearchBar getStockInfo={getStockInfo} />
-      {errorMsg && <div><h4>{errorMsg}</h4></div>}
+      {isLoading && <h2 className='loading'>Fetching Ticker Info...</h2>}
+      {errorMsg && <div className='error-msg'><h4>{errorMsg}</h4></div>}
       {foundStock && <SearchResult stockInfo={foundStock}/>}
-      <StockList />
+      <StockList getStockInfo={getStockInfo}/>
     </section>
   )
 }
