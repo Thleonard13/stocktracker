@@ -24,10 +24,10 @@ const StockList = (props) => {
                 <p>24h Change</p>
                 <p className='disappear-on-mobile'>Volume</p>
             </div>
-            <StockHighlights symbol={popularTickers[0]} getStockInfo={getStockInfo}/>
-            <StockHighlights symbol={popularTickers[1]} getStockInfo={getStockInfo}/>
-            <StockHighlights symbol={popularTickers[2]} getStockInfo={getStockInfo}/>
-            <StockHighlights symbol={popularTickers[3]} getStockInfo={getStockInfo}/>
+            <StockHighlights symbol={popularTickers[0]} />
+            <StockHighlights symbol={popularTickers[1]} />
+            <StockHighlights symbol={popularTickers[2]} />
+            <StockHighlights symbol={popularTickers[3]} />
         </div>
     </div>
   )

@@ -101,6 +101,12 @@ button:focus-visible {
 /* MOBILE SCREENS */
 @media screen and (max-width: 1000px) {
 
+
+  html {
+    scroll-behavior: initial;
+  }
+
+
   .disappear-on-tablet {
     display: none !important;
   }

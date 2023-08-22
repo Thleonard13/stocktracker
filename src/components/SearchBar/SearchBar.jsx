@@ -4,12 +4,13 @@ import './SearchBar.css'
 
 const SearchBar = (props) => {
 
-  const  [query, setQuery] = useState('');
+  const  [query, setQuery] = useState('')
+  const { fetchStock } = props
 
   // fetches stock info using ticker in the search bar
   const handleEnterKeyPress = (event) => {
     if (event.key === 'Enter'){
-      props.getStockInfo(query)
+      fetchStock(query)
     }
   };
 
@@ -21,7 +22,7 @@ const SearchBar = (props) => {
             onKeyDown={handleEnterKeyPress}
             placeholder='search ticker symbol'
         />
-        <i className="fa-solid fa-magnifying-glass" onClick={() => props.getStockInfo(query)}></i>
+        <i className="fa-solid fa-magnifying-glass" onClick={() => fetchStock(query)}></i>
     </div>
   )
 }

@@ -1,3 +1,4 @@
+// function for fetching stock information from API
 const fetchStockInfo = async (symbol) => {
     const url = `https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=compact&datatype=json`;
 const options = {
@@ -12,7 +13,7 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	console.log(result);
+	// console.log('STOCK FETCHED: ',result);
     return result
 
 } catch (error) {

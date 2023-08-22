@@ -23,8 +23,6 @@ const SearchResult = (props) => {
   // calculate price change in percent using open and close prices
   const percentChange = (((today.close - today.open) / today.open) * 100).toFixed(2);
 
-  console.log(stockInfo["Meta Data"])
-
   return (
     <section id='search-result-section'>
       <div className='search-result-card'>
