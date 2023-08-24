@@ -14,15 +14,18 @@
 }
 
 #mobile-menu li {
-    width: 90%;
     list-style: none;
+}
+
+#mobile-menu a {
+    width: 90%;
     padding-top: 1rem;
     font-size: 1.6rem;
     border-bottom: 2px solid hsla(0,0%,51%,.25);
     text-align: center;
 }
 
-#mobile-menu li:hover {
+#mobile-menu a:hover {
     background: #241c2b;
 }
 
