@@ -2,9 +2,7 @@ import React from 'react'
 import './StockList.css'
 import StockHighlights from '../StockHighLights/StockHighlights'
 
-const StockList = (props) => {
-
-  const { getStockInfo } = props
+const StockList = () => {
 
   const popularTickers = [
     'AAPL',
